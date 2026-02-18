@@ -1,7 +1,4 @@
-const isProd = typeof window !== 'undefined' && window.location.hostname !== 'localhost';
-export const API_BASE_URL = isProd 
-  ? 'https://v01-qiyoga-backend-mvp-prod-production.up.railway.app'
-  : 'http://localhost:3001';
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
 
 export const API_ENDPOINTS = {
   checkout: `${API_BASE_URL}/api/checkout`,
